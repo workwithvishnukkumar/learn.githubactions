@@ -1,39 +1,29 @@
-# This is a varible learning workflow
+# This is a variable learning workflow
+name: Variable Learning Workflow
 
-name: Varible Learning Workflow
+env:
+  cloud: google-cloud
 
-# Controls when the workflow will run
 on:
-  env:
-    cloud: google-cloud
-  # Triggers the workflow on push or pull request events but only for the "main" branch
   push:
     branches: [ "main" ]
   pull_request:
     branches: [ "main" ]
-
-  # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
 
-# A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
-    env:
-        greetings: Good morning
-  # This workflow contains a single job called "build"
   build:
-    # The type of runner that the job will run on
     runs-on: ubuntu-latest
-
-    # Steps represent a sequence of tasks that will be executed as part of the job
+    env:
+      greetings: Good morning
     steps:
-      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v6
-      # Runs a single command using the runners shell
+
       - name: Run a one-line script
         run: echo "Hello, $greetings its me $name is using $cloud"
         env:
-        name: Vishnu K Kumar
-      # Runs a set of commands using the runners shell
+          name: Vishnu K Kumar
+
       - name: Run a multi-line script
         run: |
           echo Add other actions to build,
