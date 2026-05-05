@@ -20,7 +20,7 @@ jobs:
       - uses: actions/checkout@v6
 
       - name: Run a one-line script
-        run: echo "Hello, $greetings its me $name is using $cloud"
+        run: echo "Hello, $greetings its me $name is using $cloud ${{vars.ProjectID}}"
         env:
           name: Vishnu K Kumar
 
