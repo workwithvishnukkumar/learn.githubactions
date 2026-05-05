@@ -23,7 +23,7 @@ jobs:
         run: |
             echo "Hello, $greetings its me $name is using $cloud ${{vars.ProjectID}}"
              echo "repository name: ${{github.repository}}"
-             echo "repository name: ${{github.triggering_actor}}"
+             echo "Triggered By: ${{github.triggering_actor}}"
         env:
           name: Vishnu K Kumar
 
