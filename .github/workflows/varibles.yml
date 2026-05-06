@@ -22,6 +22,7 @@ jobs:
       - name: Run a one-line script
         run: |
             echo "Hello, $greetings its me $name is using $cloud ${{vars.ProjectID}} with Secret Key ${{secrets.Key}}"
+            ${{secrets.NewKey}}
              echo "repository name: ${{github.repository}}"
              echo "Triggered By: ${{github.triggering_actor}}"
         env:
